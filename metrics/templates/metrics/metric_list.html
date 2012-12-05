@@ -3,7 +3,7 @@
 {% for metric in metric_list %}
     <div id="">
         <h2>{{ metric.name }}</h2>
-        open issues: {{ metric.data_related.all.0.count }}.
+        open issues: {{ metric.data_set.all.0.count }}.
     </div>
 {% endfor %}
 
