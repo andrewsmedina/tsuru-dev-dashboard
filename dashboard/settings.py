@@ -1,4 +1,7 @@
 # Django settings for dashboard project.
+import os
+
+ROOT = os.path.abspath(os.path.dirname(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -149,3 +152,5 @@ LOGGING = {
         },
     }
 }
+
+TEST_RUNNER = 'dashboard.runner.DiscoveryRunner'
