@@ -1,7 +1,5 @@
-from django.views.generic import ListView
-
-from metrics.models import Metric
+from django.views.generic import View
 
 
-class Index(ListView):
-    model = Metric
+class Index(View):
+    pass
