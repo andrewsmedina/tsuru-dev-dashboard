@@ -2,8 +2,6 @@ from django.db import models
 
 from datetime import datetime
 
-import requests
-
 
 class Data(models.Model):
     count = models.IntegerField()

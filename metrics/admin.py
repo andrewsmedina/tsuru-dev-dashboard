@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from metrics.models import Metric, Data
+from metrics.models import Data
 
 
-#admin.site.register(Metric)
 admin.site.register(Data)
