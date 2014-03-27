@@ -6,3 +6,4 @@ deps:
 
 test: clean deps
 	./manage.py test
+	flake8 .
