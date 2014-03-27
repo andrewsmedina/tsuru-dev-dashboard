@@ -1,5 +1,3 @@
 language: python
-install:
-  - pip install -qr requirements.txt
 script:
-  - python manage.py test
+  - make test
