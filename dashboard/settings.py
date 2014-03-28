@@ -145,5 +145,3 @@ LOGGING = {
         },
     }
 }
-
-TEST_RUNNER = 'dashboard.runner.DiscoveryRunner'
