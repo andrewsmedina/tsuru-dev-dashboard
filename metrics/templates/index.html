@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+	{% load static from staticfiles %}
+	<script type="text/javascript" src="{% static "dashboard.js" %}"></script>
+{% endblock %}
+
+{% block content %}
+	{% for report in data %}
+		<div>
+		<h3>{{ report.metric.name }}</h3>
+		<p class="value" >
+		{{ report.latest.count }}
+		<span class="timestamp">&nbsp;</span>
+		</p>
+		</div>
+	{% endfor %}
+	<p class="updated">
+	Updated {{ data.0.latest.date|timesince }} ago.
+	</p>
+{% endblock %}

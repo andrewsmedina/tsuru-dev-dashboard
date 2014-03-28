@@ -9,10 +9,13 @@ class Data(models.Model):
     count = models.IntegerField()
     date = models.DateTimeField(default=datetime.now)
 
+    class Meta:
+        get_latest_by = 'date'
+
 
 class Metric(models.Model):
     name = models.CharField(max_length=255)
-    data = models.ManyToManyField(Data)
+    data = models.ManyToManyField(Data, null=True, blank=True)
 
     class Meta:
         abstract = True
@@ -26,10 +29,10 @@ class GithubItem(Metric):
         count = 0
         page = 1
         while True:
-            r = requests.get(self.api_url, params={
+            r = requests.get(self.url, params={
                 'page': page, 'per_page': 100
             })
-            c = len(r.json)
+            c = len(r.json())
             count += c
             page += 1
             if c < 100:
